@@ -41,3 +41,19 @@ The dataset used for this challenge is a subset of the **CholecT50** endoscopic 
     ├───label_mapping.txt        
     ├───LICENSE
     └───README.md
+## Methodology
+
+### 1. **Model Selection**
+
+- **ResNet-50**: A pre-trained ResNet-50 model is used as the backbone for the task of tool count prediction. The model is fine-tuned to adapt to the specific problem of surgical tool detection by replacing the final fully connected layer to output six units, corresponding to six surgical tool classes. ResNet-50 is known for its deep architecture, which helps capture complex visual features and achieve high accuracy on medical imaging tasks.
+
+### 2. **Grad-CAM (Gradient-weighted Class Activation Mapping)**
+
+- **Grad-CAM**: To visualize the regions of the image that are most important for the model’s predictions, Grad-CAM is applied. This technique generates class activation maps by using gradients of the target class flowing into the final convolutional layer. These maps highlight the most relevant areas in the input image that the model uses to make predictions. Grad-CAM helps interpret and validate the decision-making process of the model, especially in medical applications where understanding model behavior is crucial.
+
+### 3. **Training and Evaluation**
+
+- **Training**: The model is trained using the Adam optimizer with a learning rate of 0.0001 and a Mean Squared Error (MSE) loss function to predict the count of tools per frame. The model undergoes training for a limited number of steps to avoid overfitting and to quickly evaluate performance.
+  
+- **Evaluation**: After training, the model is evaluated using a separate validation dataset to ensure its generalization ability. The validation loss is tracked to monitor overfitting.
+
