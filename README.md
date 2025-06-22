@@ -1,5 +1,4 @@
-# Beginner's Hypothesis 2025 (2Y)  
-## Surgical Action Triplet Post Challenge Phase
+## Surgical Action Triplet Post Challenge Phase(Weakl Supervised Learning)
 
 ### Challenge Background  
 This project is inspired by the [CholecTriplet 2022 Challenge](https://cholectriplet2022.grand-challenge.org/cholectriplet2022/) and aims to contribute to the advancement of fine-grained surgical activity modeling in computer-assisted surgery.  
